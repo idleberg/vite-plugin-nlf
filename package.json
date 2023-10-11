@@ -1,0 +1,66 @@
+{
+  "name": "@nsis/vite-plugin-nlf",
+  "version": "0.0.0",
+  "description": "A Vite plugin to load NSIS language files",
+  "license": "MIT",
+  "author": "Jan T. Sott",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idleberg/vite-plugin-nlf"
+  },
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "dist/",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm-run-all --parallel build:*",
+    "build:esm": "tsup index.ts --format esm --platform node --dts",
+    "build:cjs": "tsup index.ts --format cjs --platform node --dts",
+    "lint": "eslint index.ts --ignore-path .gitignore",
+    "prepack": "npm run build",
+    "prepare": "husky install",
+    "release": "np --no-yarn --any-branch",
+    "test": "cd tests && vite build --config vite.config.mjs"
+  },
+  "keywords": [
+    "vite-plugin",
+    "nsis",
+    "nsis language file",
+    "nlf"
+  ],
+  "dependencies": {
+    "@nsis/nlf": "^0.11.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.18.58",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "eslint": "^8.51.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "np": "^8.0.4",
+    "npm-run-all2": "^6.1.1",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.11"
+  },
+  "peerDependencies": {
+    "vite": "^4.0.0"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix"
+  }
+}
