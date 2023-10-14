@@ -13,6 +13,7 @@
 ## Usage
 
 ```js
+// vite.config.js
 import { defineConfig } from 'vite';
 import nlf from '@nsis/vite-plugin-nlf';
 
@@ -21,6 +22,13 @@ export default defineConfig({
         nlf()
     ]
 });
+```
+
+```js
+// example.js
+import English from './Contrib/Language files/English.nlf';
+
+console.log(English.codepage);
 ```
 
 ## License
