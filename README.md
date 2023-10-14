@@ -28,7 +28,7 @@ export default defineConfig({
 // example.js
 import English from './Contrib/Language files/English.nlf';
 
-console.log(`The code-page for English is ${English.codepage}`);
+console.log(`The ID for English is ${English.id}`);
 ```
 
 ## License
