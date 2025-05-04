@@ -1,14 +1,12 @@
-import { defineConfig } from 'vite'
-import nlf from '../dist/index.mjs'
+import { defineConfig } from 'vite';
+import nlf from '../dist/index.mjs';
 
 export default defineConfig({
-		plugins: [
-			nlf()
-		],
-		build: {
-				emptyOutDir: false,
-				rollupOptions: {
-						input: './index.mjs'
-				}
-		}
+	plugins: [nlf()],
+	build: {
+		emptyOutDir: false,
+		rollupOptions: {
+			input: './index.mjs',
+		},
+	},
 });

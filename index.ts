@@ -1,4 +1,4 @@
-import * as NLF from "@nsis/nlf";
+import * as NLF from '@nsis/nlf';
 
 export default function NsisLanguageFilePlugin() {
 	return {
@@ -14,11 +14,8 @@ export default function NsisLanguageFilePlugin() {
 			});
 
 			return {
-				code: [
-					`const data = ${output};`,
-					'export default data;'
-				].join('')
-			}
-		}
-	}
+				code: [`const data = ${output};`, 'export default data;'].join(''),
+			};
+		},
+	};
 }

@@ -1,5 +1,5 @@
-import Albanian from './fixtures/Albanian.nlf';
 import Afrikaans from './fixtures/Afrikaans.nlf';
+import Albanian from './fixtures/Albanian.nlf';
 import Arabic from './fixtures/Arabic.nlf';
 import Armenian from './fixtures/Armenian.nlf';
 import Asturian from './fixtures/Asturian.nlf';
@@ -131,5 +131,5 @@ console.log({
 	Ukrainian,
 	Uzbek,
 	Vietnamese,
-	Welsh
+	Welsh,
 });
