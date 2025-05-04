@@ -18,7 +18,7 @@
   },
   "types": "./dist/index.d.ts",
   "engines": {
-    "node": ">=16.0.0"
+    "node": "^18.0.0 || ^20.0.0 || >=22.0.0"
   },
   "files": [
     "dist/",
@@ -26,12 +26,11 @@
     "README.md"
   ],
   "scripts": {
-    "build": "npm-run-all --parallel build:*",
+    "build": "concurrently --prefix '{name}' -c 'blue,green' 'npm:build:*'",
     "build:esm": "tsup index.ts --format esm --platform node --dts",
     "build:cjs": "tsup index.ts --format cjs --platform node --dts",
-    "lint": "eslint index.ts --ignore-path .gitignore",
+    "lint": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
     "prepack": "npm run build",
-    "prepare": "husky install",
     "release": "np --no-yarn --any-branch",
     "test": "cd tests && vite build --config vite.config.mjs"
   },
@@ -42,25 +41,22 @@
     "nlf"
   ],
   "dependencies": {
-    "@nsis/nlf": "^0.11.1"
+    "@nsis/nlf": "^0.12.0"
   },
   "devDependencies": {
-    "@types/node": "^16.18.58",
-    "@typescript-eslint/eslint-plugin": "^6.7.5",
-    "@typescript-eslint/parser": "^6.7.5",
-    "eslint": "^8.51.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
-    "np": "^8.0.4",
-    "npm-run-all2": "^6.1.1",
-    "tsup": "^7.2.0",
+    "@biomejs/biome": "^1.9.4",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@total-typescript/tsconfig": "^1.0.4",
+    "@types/node": "^22.15.3",
+    "concurrently": "^9.1.2",
+    "lefthook": "^1.11.12",
+    "np": "^10.2.0",
+    "tsup": "^8.4.0",
     "typescript": "^5.2.2",
-    "vite": "^4.4.11"
+    "vite": "^6.3.4"
   },
   "peerDependencies": {
-    "vite": "^4.0.0"
-  },
-  "lint-staged": {
-    "*.ts": "eslint --cache --fix"
+    "vite": "^4.0.0 || ^5.0.0 || >=6.0.0"
   }
 }
