@@ -27,7 +27,7 @@
 		"dev": "tsdown --watch",
     "lint": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
     "prepack": "npm run build",
-    "release": "np --no-yarn --any-branch",
+    "publish:npm": "np --any-branch",
     "test": "cd tests && vite build --config vite.config.ts"
   },
   "keywords": [
