@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/idleberg/vite-plugin-nlf"
   },
+	"type": "module",
   "exports": {
     "import": "./dist/plugin.js",
     "types": "./dist/plugin.d.ts"
