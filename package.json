@@ -1,6 +1,6 @@
 {
   "name": "@nsis/vite-plugin-nlf",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A Vite plugin to load NSIS language files",
   "license": "MIT",
   "author": "Jan T. Sott",
@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/idleberg/vite-plugin-nlf"
   },
-	"type": "module",
+  "type": "module",
   "exports": {
     "import": "./dist/plugin.js",
     "types": "./dist/plugin.d.ts"
@@ -23,8 +23,8 @@
     "README.md"
   ],
   "scripts": {
-		"build": "tsdown",
-		"dev": "tsdown --watch",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
     "lint": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
     "prepack": "npm run build",
     "publish:npm": "np --any-branch",
