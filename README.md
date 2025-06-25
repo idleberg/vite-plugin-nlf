@@ -33,4 +33,4 @@ console.log(`The ID for English is ${English.id}`);
 
 ## License
 
-This work is licensed under [The MIT License](LICENSE)
+This work is licensed under [The MIT License](LICENSE).
