@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import nlf from '../index.ts';
+import nlf from '../src/plugin.ts';
 
 export default defineConfig({
 	plugins: [nlf()],
